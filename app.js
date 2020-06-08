@@ -1,7 +1,15 @@
+// load modules
 const express = require('express');
 const mysql = require('mysql');
 
+// create an instance of the express module
 const app = express();
+
+// required to obtain the value of a form
+app.use(express.urlencoded({extended: false}));
+
+// serve static files (css, js, images)
+app.use(express.static('public'));
 
 // mysql connection info
 const connection = mysql.createConnection({
@@ -22,13 +30,7 @@ connection.connect((err) => {
 
 // '/' routing
 app.get('/', (req, res) => {
-	connection.query(
-		'SELECT * FROM users',
-		(error, results) => {
-			console.log(results);
-			res.render('hello.ejs');
-		}
-	);
+	res.render('top.ejs');
 });
 
 // Run a local web server (localhost:3000)
