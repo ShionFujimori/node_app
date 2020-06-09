@@ -33,5 +33,19 @@ app.get('/', (req, res) => {
 	res.render('top.ejs');
 });
 
+// '/users' routing
+app.get('/users', (req, res) => {
+    connection.query(
+        'SELECT * FROM users',
+        (error, results) => {
+            res.render('users.ejs', {items: results});
+        });
+});
+
+// '/new' routing
+app.get('/new', (req, res) => {
+    res.render('new.ejs');
+})
+
 // Run a local web server (localhost:3000)
 app.listen(3000);

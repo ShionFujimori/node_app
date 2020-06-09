@@ -12,7 +12,18 @@
     </head>
     <body>
         <h1>PRISE</h1>
-        <img src="/images/prise.png" alt="prise logo">
-        <a href="/users">Click here to see the full list of users!!</a>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            <% items.forEach((item) => { %>
+                <tr>
+                    <th><%= item.id %></th>
+                    <th><%= item.name %></th>
+                </tr>
+            <% }) %>
+        </table>
+        <a href="/new">Add a new user</a>
     </body>
 </html>
