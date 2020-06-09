@@ -47,5 +47,16 @@ app.get('/new', (req, res) => {
     res.render('new.ejs');
 })
 
+// '/create' routing
+app.post('/create', (req, res) => {
+    connection.query(
+        'INSERT INTO users (name) VALUES (?)',
+        [req.body.name],
+        (error, results) => {
+            res.redirect('/users');
+        }
+    );
+})
+
 // Run a local web server (localhost:3000)
 app.listen(3000);
