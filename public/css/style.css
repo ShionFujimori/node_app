@@ -11,10 +11,10 @@ img {
     width: 50%;
 }
 
-a {
-    font-size: 24px;
+a.navbar-brand {
+    font-size: 30px;
 }
 
-table {
-    font-size: 32px;
+div.main {
+    margin: 20px;
 }

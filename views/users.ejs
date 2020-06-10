@@ -9,21 +9,65 @@
         <title>Node App</title>
         <!-- CSS -->
         <link rel="stylesheet" href="/css/style.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>PRISE</h1>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-            </tr>
-            <% items.forEach((item) => { %>
+        <!-- NavBar bootstrap -->
+        <nav class="navbar sticky-top navbar-expand-lg bg-light navbar-light justify-content-between">
+          <a class="navbar-brand" href="/">PRISE</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">Features</a>
+              <a class="nav-item nav-link" href="#">Pricing</a>
+              <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+        <!-- Jumbotron bootstrap -->
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Users List</h1>
+            <p class="lead">The below table shows the full list of users.</p>
+          </div>
+        </div>
+
+        <div class="main">
+            <!-- Table bootstrap -->
+            <table class="table table-hover">
+              <thead>
                 <tr>
-                    <th><%= item.id %></th>
-                    <th><%= item.name %></th>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
                 </tr>
-            <% }) %>
-        </table>
-        <a href="/new">Add a new user</a>
+              </thead>
+              <tbody>
+                  <% items.forEach((item) => { %>
+                      <tr>
+                          <th><%= item.id %></th>
+                          <th><%= item.name %></th>
+                      </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+
+            <a class="btn btn-primary" href="/new" role="button">Add a new user</a>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
     </body>
 </html>

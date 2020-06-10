@@ -9,10 +9,50 @@
         <title>Node App</title>
         <!-- CSS -->
         <link rel="stylesheet" href="/css/style.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>PRISE</h1>
-        <img src="/images/prise.png" alt="prise logo">
-        <a href="/users">Click here to see the full list of users!!</a>
+        <!-- NavBar bootstrap -->
+        <nav class="navbar sticky-top navbar-expand-lg bg-light navbar-light justify-content-between">
+          <a class="navbar-brand" href="/">PRISE</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">Features</a>
+              <a class="nav-item nav-link" href="#">Pricing</a>
+              <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+        <!-- Jumbotron bootstrap -->
+        <div class="jumbotron">
+          <h1 class="display-4">Welcome to the Official Website of PRISE </h1>
+          <p class="lead">Connect student organizations with companies to foster better relationships.</p>
+          <hr class="my-4">
+          <p>Our platform is the only place that provides the tools to
+             simplify and save time in forming sponsorships between <br> student
+             organizations and companies. We provide the solution where other
+             platforms could not cover.</p>
+          <p>Please click here to view the full list of users.</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/users" role="button">Users List</a>
+          </p>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
     </body>
 </html>
