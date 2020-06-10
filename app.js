@@ -45,7 +45,7 @@ app.get('/users', (req, res) => {
 // '/new' routing
 app.get('/new', (req, res) => {
     res.render('new.ejs');
-})
+});
 
 // '/create' routing
 app.post('/create', (req, res) => {
@@ -56,7 +56,29 @@ app.post('/create', (req, res) => {
             res.redirect('/users');
         }
     );
-})
+});
+
+// '/delete/:id' routing
+app.post('/delete/:id', (req, res) => {
+    connection.query(
+        'DELETE FROM users WHERE id = ?',
+        [req.params.id],
+        (error, results) => {
+            res.redirect('/users');
+        }
+    );
+});
+
+// '/edit/:id' routing
+app.get('/edit/:id', (req, res) => {
+    connection.query(
+        'SELECT * FROM users WHERE id = ?',
+        [req.params.id],
+        (error, results) => {
+            res.render('edit.ejs', {item: results[0]});
+        }
+    );
+});
 
 // Run a local web server (localhost:3000)
 app.listen(3000);

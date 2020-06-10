@@ -48,13 +48,23 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
+                  <th scope="col">Delete</th>
+                  <th scope="col">Edit</th>
                 </tr>
               </thead>
               <tbody>
                   <% items.forEach((item) => { %>
                       <tr>
                           <th><%= item.id %></th>
-                          <th><%= item.name %></th>
+                          <td><%= item.name %></td>
+                          <td>
+                              <form action="/delete/<%= item.id %>" method="post">
+                                  <button type="submit" class="btn btn-danger">Delete</button>
+                              </form>
+                          </td>
+                          <td>
+                              <a class="btn btn-primary" href="/edit/<%= item.id %>" role="button">Edit</a>
+                          </td>
                       </tr>
                   <% }) %>
               </tbody>
