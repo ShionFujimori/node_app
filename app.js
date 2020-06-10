@@ -82,5 +82,16 @@ app.get('/edit/:id', (req, res) => {
     );
 });
 
+// '/update/:id' routing
+app.post('/update/:id', (req, res) => {
+    connection.query(
+        'UPDATE users SET name = ? WHERE id = ?',
+        [req.body.name, req.params.id],
+        (error, results) => {
+            res.redirect('/users');
+        }
+    );
+});
+
 // Run a local web server (localhost:3000)
 app.listen(3000);

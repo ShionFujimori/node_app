@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- required meta tags -->
+        <meta charset="utf-8">
+        <meta name="description" content="Welcome to the official website of PRISE.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- title -->
+        <title>Node App</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/style.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-expand-lg bg-light navbar-light justify-content-between">
+          <a class="navbar-brand" href="/">PRISE</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">Features</a>
+              <a class="nav-item nav-link" href="#">Pricing</a>
+              <a class="nav-item nav-link" href="#">Contact</a>
+            </div>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+        <!-- Jumbotron bootstrap -->
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Update a user</h1>
+                <p class="lead">Please fill in the information below to update a user.</p>
+            </div>
+        </div>
+
+        <div class="main">
+            <!-- Form bootstrap -->
+            <form action="/update/<%= item.id %>" method="post">
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input type="text" class="form-control" name="name" value="<%= item.name %>" id="username">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+
+            <a class="btn btn-danger mt-2" href="/users" role="button">Cancel</a>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS, then Font Awesome -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    </body>
+</html>
