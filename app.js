@@ -16,7 +16,8 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '1122Shion',
-  database: 'node_app'
+  database: 'node_app',
+  multipleStatements: true
 });
 
 // mysql check error
@@ -61,7 +62,8 @@ app.post('/create', (req, res) => {
 // '/delete/:id' routing
 app.post('/delete/:id', (req, res) => {
     connection.query(
-        'DELETE FROM users WHERE id = ?',
+        'DELETE FROM users WHERE id = ?; \
+        ALTER TABLE users AUTO_INCREMENT = 1',
         [req.params.id],
         (error, results) => {
             res.redirect('/users');
